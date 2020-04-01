@@ -18,7 +18,12 @@ class StatisticsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cellArray.append(firstScreenData.newData)
+        // cellArray.append(firstScreenData.newData)
+        
+        if let dates = UserDefaults.standard.string(forKey: firstScreenData.dateSet), let weights = UserDefaults.standard.string(forKey: firstScreenData.weightSet) {
+            
+            // эти данные надо как-то добавить в cellArray
+        }
     }
     
     
