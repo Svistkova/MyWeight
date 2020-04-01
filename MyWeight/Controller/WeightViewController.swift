@@ -15,6 +15,10 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var weightTextField: UITextField!
     
     var date = ""
+    let newData = CellModel(dateCell: "", weightCell: "")
+    
+    let dateSet = "dateSet"
+    let weightSet = "weightSet"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +39,14 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
             
             if weight != "" {
                 print(weight)
-                self.performSegue(withIdentifier: "goToResult", sender: self)
+//                self.performSegue(withIdentifier: "goToResult", sender: self)
+                newData.weightCell = weight
+                UserDefaults.standard.set(weight, forKey: weightSet)
+                print("Weight Saved")
             } else {
                 weightTextField.placeholder = "Укажите ваш вес"
             }
+            
         }
         
 
@@ -48,6 +56,10 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         date = formatter.string(from: Date())
+        newData.dateCell = date
+        UserDefaults.standard.set(date, forKey: dateSet)
+        print("Date Saved")
+        
         return date
     }
     

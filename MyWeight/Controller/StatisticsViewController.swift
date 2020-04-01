@@ -13,15 +13,12 @@ class StatisticsViewController: UITableViewController {
     
     
     var cellArray: [CellModel] = []
-    //adding some temporary hardcoded items
-    let item1 = CellModel(dateCell: "01/01/01", weightCell: "55.88")
-    let item2 = CellModel(dateCell: "02/02/02", weightCell: "55.77")
+    var firstScreenData = WeightViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cellArray.append(item1)
-        cellArray.append(item2)
+        cellArray.append(firstScreenData.newData)
     }
     
     
