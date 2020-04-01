@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		792005F8243359E00032BD70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792005F7243359E00032BD70 /* AppDelegate.swift */; };
 		792005FA243359E00032BD70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792005F9243359E00032BD70 /* SceneDelegate.swift */; };
-		792005FC243359E00032BD70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792005FB243359E00032BD70 /* ViewController.swift */; };
+		792005FC243359E00032BD70 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792005FB243359E00032BD70 /* WeightViewController.swift */; };
 		792005FF243359E00032BD70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792005FD243359E00032BD70 /* Main.storyboard */; };
 		79200601243359E40032BD70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79200600243359E40032BD70 /* Assets.xcassets */; };
 		79200604243359E40032BD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79200602243359E40032BD70 /* LaunchScreen.storyboard */; };
+		7920060F243382090032BD70 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920060E243382090032BD70 /* StatisticsViewController.swift */; };
+		7920061124338B3F0032BD70 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920061024338B3F0032BD70 /* CellModel.swift */; };
+		7920061324339E7D0032BD70 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920061224339E7D0032BD70 /* Statistics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		792005F4243359E00032BD70 /* MyWeight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		792005F7243359E00032BD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		792005F9243359E00032BD70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		792005FB243359E00032BD70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		792005FB243359E00032BD70 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		792005FE243359E00032BD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79200600243359E40032BD70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79200603243359E40032BD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79200605243359E40032BD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7920060E243382090032BD70 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		7920061024338B3F0032BD70 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		7920061224339E7D0032BD70 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,40 @@
 			children = (
 				792005F7243359E00032BD70 /* AppDelegate.swift */,
 				792005F9243359E00032BD70 /* SceneDelegate.swift */,
-				792005FB243359E00032BD70 /* ViewController.swift */,
-				792005FD243359E00032BD70 /* Main.storyboard */,
+				7920060C243381A70032BD70 /* Model */,
+				7920060B2433819B0032BD70 /* View */,
+				7920060D243381C20032BD70 /* Controller */,
 				79200600243359E40032BD70 /* Assets.xcassets */,
 				79200602243359E40032BD70 /* LaunchScreen.storyboard */,
 				79200605243359E40032BD70 /* Info.plist */,
 			);
 			path = MyWeight;
+			sourceTree = "<group>";
+		};
+		7920060B2433819B0032BD70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				792005FD243359E00032BD70 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7920060C243381A70032BD70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7920061024338B3F0032BD70 /* CellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7920060D243381C20032BD70 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				792005FB243359E00032BD70 /* WeightViewController.swift */,
+				7920060E243382090032BD70 /* StatisticsViewController.swift */,
+				7920061224339E7D0032BD70 /* Statistics.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				792005FC243359E00032BD70 /* ViewController.swift in Sources */,
+				792005FC243359E00032BD70 /* WeightViewController.swift in Sources */,
 				792005F8243359E00032BD70 /* AppDelegate.swift in Sources */,
 				792005FA243359E00032BD70 /* SceneDelegate.swift in Sources */,
+				7920061124338B3F0032BD70 /* CellModel.swift in Sources */,
+				7920061324339E7D0032BD70 /* Statistics.swift in Sources */,
+				7920060F243382090032BD70 /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinasvistkova.MyWeight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinasvistkova.MyWeight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
