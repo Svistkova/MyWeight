@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// class for the information to show in cells
 class CellModel {
     
     var dateCell: String
