@@ -31,13 +31,17 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        let weight = weightTextField.text!
-        
-        if weight != "" {
-            print(weight)
+        if let weight = weightTextField.text {
+            
+            if weight != "" {
+                print(weight)
+                self.performSegue(withIdentifier: "goToResult", sender: self)
+            } else {
+                weightTextField.placeholder = "Укажите ваш вес"
+            }
         }
         
-        self.performSegue(withIdentifier: "goToResult", sender: self)
+
     }
     
     func getDate() -> String {
@@ -47,10 +51,6 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         return date
     }
     
-    
-    @objc func tableViewTapped() {
-        weightTextField.endEditing(true)
-    }
     
     
     //MARK:- TextField Delegate Methods
@@ -70,6 +70,8 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         }
     }
+    
+    // method to not allow to enter more than one decimal points and 3 decimal places
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let oldText = textField.text, let r = Range(range, in: oldText) else {
