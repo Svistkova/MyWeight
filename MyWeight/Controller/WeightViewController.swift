@@ -15,7 +15,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var weightTextField: UITextField!
     
     var date = ""
-    let newData = CellModel(dateCell: "", weightCell: "")
+    var newData = CellModel(dateCell: "", weightCell: "")
     
     let dateSet = "dateSet"
     let weightSet = "weightSet"
@@ -38,11 +38,9 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         if let weight = weightTextField.text {
             
             if weight != "" {
-                print(weight)
-//                self.performSegue(withIdentifier: "goToResult", sender: self)
+                self.performSegue(withIdentifier: "goToResult", sender: self)
                 newData.weightCell = weight
                 UserDefaults.standard.set(weight, forKey: weightSet)
-                print("Weight Saved")
             } else {
                 weightTextField.placeholder = "Укажите ваш вес"
             }
@@ -58,11 +56,14 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         date = formatter.string(from: Date())
         newData.dateCell = date
         UserDefaults.standard.set(date, forKey: dateSet)
-        print("Date Saved")
         
         return date
     }
     
+    
+    @IBAction func GoToDataButtonPressed(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
     
     
     //MARK:- TextField Delegate Methods

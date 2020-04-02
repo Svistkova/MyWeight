@@ -18,10 +18,13 @@ class StatisticsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = 60.0
+        
         
         if let dates = UserDefaults.standard.string(forKey: firstScreenData.dateSet), let weights = UserDefaults.standard.string(forKey: firstScreenData.weightSet) {
             let singleCellData = CellModel(dateCell: dates, weightCell: weights)
             cellArray.append(singleCellData)
+            
         }
     }
     
@@ -31,13 +34,26 @@ class StatisticsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeightCell", for: indexPath) as! StatisticsCell
+        
         cell.dateRecorded.text = cellArray[indexPath.row].dateCell
+        print(cellArray[indexPath.row].dateCell)
+        print(cell.dateRecorded.text!)
+        
+        
+        
         cell.weightRecorded.text = cellArray[indexPath.row].weightCell
         
-        tableView.reloadData()
+        print(cellArray[indexPath.row].weightCell)
+        print(cell.weightRecorded.text!)
+
+        
+        //        tableView.reloadData()
         
         return cell
+        
+        
     }
     
     
