@@ -20,12 +20,8 @@ class StatisticsViewController: UITableViewController {
         
         tableView.rowHeight = 60.0
         
-        
-        if let dates = UserDefaults.standard.string(forKey: firstScreenData.dateSet), let weights = UserDefaults.standard.string(forKey: firstScreenData.weightSet) {
-            let singleCellData = CellModel(dateCell: dates, weightCell: weights)
-            cellArray.append(singleCellData)
-            
-        }
+        retrievingDataSaved()
+
     }
     
     
@@ -55,6 +51,11 @@ class StatisticsViewController: UITableViewController {
         
         
     }
-    
+func retrievingDataSaved() {
+    if let dates = UserDefaults.standard.string(forKey: firstScreenData.dateSet), let weights = UserDefaults.standard.string(forKey: firstScreenData.weightSet) {
+        let singleCellData = CellModel(dateCell: dates, weightCell: weights)
+        cellArray.append(singleCellData)
+    }
+}
     
 }

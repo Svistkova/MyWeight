@@ -9,13 +9,13 @@
 import Foundation
 
 // class for the information to show in cells
-struct CellModel {
+class CellModel {
     
     var dateCell: String
     var weightCell: String
     
-//    init(dateCell: String, weightCell: String) {
-//        self.dateCell = dateCell
-//        self.weightCell = weightCell
-//    }
+    init(dateCell: String, weightCell: String) {
+        self.dateCell = dateCell
+        self.weightCell = weightCell
+    }
 }
