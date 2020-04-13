@@ -1,4 +1,4 @@
-## MyWeight - currently under developement
+# MyWeight - currently under developement
 
-# The App used to keep your weight control
+## The App used to keep your weight control
 
