@@ -9,7 +9,7 @@
 import Foundation
 
 // class for the information to show in cells
-class CellModel {
+class CellModel: Codable {
     
     var dateCell: String
     var weightCell: String
